@@ -7,18 +7,29 @@
 		"server/*"
 	],
 	"scripts": {
-		"build": "turbo build --no-daemon",
-		"dev": "turbo dev --no-daemon --parallel",
-		"start": "turbo start --no-daemon --parallel",
-		"lint": "turbo lint --no-daemon --parallel",
+    "build": "dotenv -e .env -e .env.local -- turbo build",
+    "dev": "dotenv -e .env -e .env.local -- turbo dev",
+    "start": "dotenv -e .env -e .env.local -- turbo start",
+    "lint": "dotenv -e .env -e .env.local -- turbo --no-cache lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
 	},
 	"devDependencies": {
 		"eslint": "8.48.0",
 		"eslint-config-custom": "*",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "lint-staged": "^15.2.5",
 		"husky": "^9.1.4",
 		"prettier": "3.3.3",
 		"turbo": "2.0.14"
 	},
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": "prettier --write"
+  },
 	"packageManager": "yarn@1.22.22"
 }
