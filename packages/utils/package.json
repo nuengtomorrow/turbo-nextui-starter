@@ -10,16 +10,16 @@
 		"test": "echo 'all package-utils tests passed!'"
 	},
 	"dependencies": {
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
-		"typescript": "5.2.2",
-		"@types/node": "20.8.0",
-		"@types/react": "18.2.23",
-		"@types/react-dom": "18.2.8",
+		"@types/node": "22.4.1",
+		"@types/react": "18.3.3",
+		"@types/react-dom": "18.3.0",
 		"eslint-config-custom": "*",
-		"tsconfig": "*"
+		"tsconfig": "*",
+		"typescript": "5.2.2"
 	},
 	"publishConfig": {
 		"access": "public"
